@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mood:</strong>
+  <%= @mood.mood %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mood.description %>
+</p>
+
+<div id="cocktails_wrapper">
+	<%= render @mood.cocktails %>
+	<div id="form">
+		<%= render "cocktails/form" %>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_mood_path(@mood) %> |
+<%= link_to 'Back', moods_path %>

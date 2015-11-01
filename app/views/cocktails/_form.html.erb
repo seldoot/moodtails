@@ -1,0 +1,4 @@
+<%= form_for( [@mood, @mood.cocktails.build]) do |f| %>
+<%= f.text_field :drink_name, placeholder: "Name of cocktail" %>
+<%= f.submit %>
+<% end %>
