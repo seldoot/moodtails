@@ -56,7 +56,7 @@ class MoodsController < ApplicationController
   def destroy
     @mood.destroy
     respond_to do |format|
-      format.html { redirect_to moods_url, notice: 'Mood was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Mood was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

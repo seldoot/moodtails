@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Mood:</strong>
-  <%= @mood.mood %>
-</p>
+<h2 class="mood_title"><%= @mood.mood %></h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mood.description %>
-</p>
+<p class="mood_sub_title"><%= @mood.description%></p>
+
 
 <div id="cocktails_wrapper">
 	<%= render @mood.cocktails %>
@@ -16,6 +11,9 @@
 		<%= render "cocktails/form" %>
 	</div>
 </div>
-
+<div class="links">
 <%= link_to 'Edit', edit_mood_path(@mood) %> |
-<%= link_to 'Back', moods_path %>
+<%= link_to 'Delete', mood_path(@mood), method: :delete, data: {confirm: "Are you sure?"} %> |
+<%= link_to 'Back', moods_path %> 
+
+</div>
