@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="mood_sub_title"><%= @cocktail.drink_name %></h2>
+
+
+<div id="cocktails_wrapper">
+	<%= render @cocktail.ingredients %>
+	 <div id="form">
+		<%= render "ingredients/form" %>
+	</div>
+</div>
+<div class="links">
+<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
+<%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} %> |
+<%= link_to 'Back', mood_path %> 
+
+</div>

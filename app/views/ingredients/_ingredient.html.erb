@@ -1,0 +1,11 @@
+
+<div class="row clearfix">
+<div class="cocktail">
+<p><%= ingredient.amount + " " + ingredient.unit + " " ingredient.ingredient%></p>
+</div>
+<div class="trash">
+<%= link_to mood_cocktail_ingredient_path(@mood, cocktail.ingredient.id), method: :delete, data: {confirm: "Are you sure?"} do %>
+<i class= "fa fa-trash"></i>
+<% end %>
+</div>
+</div>
