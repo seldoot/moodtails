@@ -1,7 +1,8 @@
 <%= form_for( [@cocktail, @cocktail.ingredients.build]) do |f| %>
 <%= f.text_field :amount, placeholder: "1.5" %>
 <%= f.text_field :unit, placeholder: "oz" %>
-<%= f.text_field :ingredient, placeholder: "Vodka" %>
-
+<%= f.text_field :ing_item, placeholder: "Vodka" %>
+<br>
 <%= f.submit %>
+
 <% end %>

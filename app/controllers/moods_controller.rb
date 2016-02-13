@@ -10,6 +10,7 @@ class MoodsController < ApplicationController
   # GET /moods/1
   # GET /moods/1.json
   def show
+    @mood = Mood.find(params[:id])
   end
 
   # GET /moods/new

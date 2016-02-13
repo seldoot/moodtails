@@ -3,7 +3,7 @@ class IngredientsController < ApplicationController
   
 
   def create
-  	@ingredient = Ingredient.new(ingredient_params)
+    @ingredient = @cocktail.ingredients.create(ingredient_params)
   	if @ingredient.save
   		flash[:notice] = "Ingredient Saved"
   		redirect_to @cocktail
@@ -27,13 +27,26 @@ class IngredientsController < ApplicationController
   	else
   		render :edit
   	end
+  end
+
+  def destroy
+    @ingredient = @cocktail.ingredients.find(params[:id])
+    if @ingredient.destroy
+      flash[:notice] = "Ingredient Deleted"
+    else
+      flash[:notice] = "Ingredient Couldn't be Deleted"
+    end
+    redirect_to @cocktail
+  end
 
   private
-  def ingredient_params
-  	params.require(:ingredient, :unit, :amount).permit(:cocktail_id)
-  end
+    def set_cocktail
+      @cocktail = Cocktail.find(params[:cocktail_id])
+    end
+
+    def ingredient_params
+    	params[:ingredient].permit(:ing_item, :unit, :amount, :cocktail_id)
+    end
  
-  def set_cocktail
-  	@cocktail = Cocktail.find(params[:cocktail_id])
-  end
+  
 end

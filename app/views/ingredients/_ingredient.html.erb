@@ -1,10 +1,10 @@
 
 <div class="row clearfix">
-<div class="cocktail">
-<p><%= ingredient.amount + " " + ingredient.unit + " " ingredient.ingredient%></p>
+<div class="ingredient">
+<p><%= (ingredient.amount).to_s + " " + (ingredient.unit).to_s + " of " + (ingredient.ing_item).to_s %></p>
 </div>
 <div class="trash">
-<%= link_to mood_cocktail_ingredient_path(@mood, cocktail.ingredient.id), method: :delete, data: {confirm: "Are you sure?"} do %>
+<%= link_to cocktail_ingredient_path(@cocktail, ingredient.id), method: :delete, data: {confirm: "Are you sure?"} do %>
 <i class= "fa fa-trash"></i>
 <% end %>
 </div>

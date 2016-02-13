@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
-	before_action :set_mood
-	before_action :set_cocktail, only: [:destroy, :show]
+	before_action :set_mood, only: [:create, :destroy]
+	before_action :set_cocktail, only: :show
 
 
 	def create
@@ -20,7 +20,7 @@ class CocktailsController < ApplicationController
 	end
 
 	def show
-	
+		@mood = Mood.find(params[:mood_id])
 	end
 
 private
